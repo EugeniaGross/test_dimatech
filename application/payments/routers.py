@@ -34,7 +34,7 @@ async def create_payment(
     except IntegrityError as e:
         logger.error(e)
         return json(
-            {"status": "Bad request", "message": "Incorrect data"}, status=404
+            {"status": "Bad request", "message": "Incorrect data"}, status=400
         )
     return json({"status": "ok"})
 

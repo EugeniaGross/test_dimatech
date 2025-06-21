@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 
 from sqlalchemy import select
 
-from accounts.models import Accounts
 from users.models import Users
 from database import async_session
 

@@ -10,6 +10,7 @@ JWT_SECRET_KEY = "123456789"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 REFRESH_TOKEN_EXPIRE_DAYS = 7
 SIGNATURE_SECRET_KEY = "gfdmhghif38yrf9ew0jkf32"
+TESTING = 1 # указывается при проведении тестирования
 ```
 
 Запуск проекта c помошью docker compose: </br>

@@ -21,6 +21,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int
     REFRESH_TOKEN_EXPIRE_DAYS: int
     SIGNATURE_SECRET_KEY: str
+    TESTING: bool = False
 
     @property
     def DB_URL(self):
@@ -32,8 +33,8 @@ class Settings(BaseSettings):
     @property
     def DB_URL_testing(self):
         return (
-            f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASSWORD}@"
-            f"{self.DB_HOST}:{self.DB_PORT}/test"
+            f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@"
+            f"{self.POSTGRES_HOST}:{self.POSTGRES_PORT}/test"
         )
 
 

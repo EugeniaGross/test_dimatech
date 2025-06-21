@@ -35,7 +35,7 @@ def is_admin():
         @wraps(f)
         async def decorated_function(request, *args, **kwargs):
             if not kwargs["user"].is_admin:
-                return json({"description": "Forbidden"}, 401)
+                return json({"description": "Forbidden"}, 403)
             del kwargs["user"]
             response = await f(request, *args, **kwargs)
             return response
@@ -58,7 +58,7 @@ def validate_signature():
                         "description": "Bad request",
                         "message": "Invaid signature",
                     },
-                    404,
+                    400,
                 )
             response = await f(request, *args, **kwargs)
             return response
